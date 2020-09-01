@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme -->
+    <style name="AppBasTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="myPrimaryFont" parent="android:Widget.TextView">
+        <item name= "android:fontFamily" >@font/open_sans</item>
+    </style>
+
+    <style name="AppTheme" parent="AppBasTheme">
+        <item name= "android:textViewStyle" >@style/myPrimaryFont </item>
+    </style>
+
+</resources>

@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="app_name">InternProject</string>
+    <string name="company_name">KARMA</string>
+
+
+</resources>
