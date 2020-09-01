@@ -114,6 +114,7 @@
                 android:background="@drawable/back_4dp_corner"
                 android:backgroundTint="@color/colorLightGray"
                 android:hint="Email"
+                android:textColorHint="@color/colorHint"
                 android:inputType="text"
                 android:maxLines="1"
                 android:padding="8dp"
@@ -122,21 +123,35 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="16dp" />
 
-            <EditText
-                android:id="@+id/password"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:background="@drawable/back_4dp_corner"
-                android:backgroundTint="@color/colorLightGray"
-                android:drawableRight="@drawable/ic_visibility_black_24dp"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:padding="8dp"
-                android:singleLine="true"
-                android:textColor="@color/colorBlack"
-                android:textSize="16dp"/>
+                android:backgroundTint="@color/colorLightGray">
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/back_4dp_corner"
+                    android:backgroundTint="@color/colorLightGray"
+                    android:hint="Password"
+                    android:inputType="textPassword|text"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHint="@color/colorHint"
+                    android:textSize="16dp"/>
+                <ImageButton
+                    android:id="@+id/pass_visibility_image_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="#00FFFFFF"
+                    android:padding="8dp"
+                    app:srcCompat="@drawable/ic_visibility_black_24dp"/>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/forget_password"

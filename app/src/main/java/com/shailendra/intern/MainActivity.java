@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText emailText;
     private EditText passwordText;
+    private ImageButton passVisibilityBtn;
 
     private Button loginButton;
 
@@ -47,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         emailText = findViewById( R.id.email );
         passwordText = findViewById( R.id.password );
         loginButton = findViewById( R.id.login_btn );
+        passVisibilityBtn = findViewById( R.id.pass_visibility_image_btn );
         progressBar = findViewById( R.id.progressBar );
 
         loginButton.setOnClickListener( new View.OnClickListener() {
@@ -63,7 +68,23 @@ public class MainActivity extends AppCompatActivity {
         clickBtnl.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity( new Intent( MainActivity.this, HomeActivity.class ) );
+//                startActivity( new Intent( MainActivity.this, HomeActivity.class ) );
+            }
+        } );
+
+        // password Visibility...
+        passVisibilityBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (passwordText.getTransformationMethod().equals( HideReturnsTransformationMethod.getInstance() )){
+                    // hide Password..
+                    passwordText.setTransformationMethod( PasswordTransformationMethod.getInstance() );
+                    passVisibilityBtn.setImageResource( R.drawable.ic_visibility_black_24dp );
+                }else{
+                    //Show Password
+                    passwordText.setTransformationMethod( HideReturnsTransformationMethod.getInstance() )
+                    ;passVisibilityBtn.setImageResource( R.drawable.ic_visibility_off_black_24dp );
+                }
             }
         } );
 
